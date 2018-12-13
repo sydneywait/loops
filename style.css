@@ -7,7 +7,7 @@
 
 .PG{
     border-style: dotted;
-    border-color: yellow;
+    border-color: aqua;
     border-width: 2px;
 
 }
@@ -20,6 +20,6 @@
 
 .R{
     border-style: dotted;
-    border-color: red;
+    border-color: purple;
     border-width: 2px;
 }

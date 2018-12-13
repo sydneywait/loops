@@ -195,7 +195,7 @@ var movieSchedule = [
         title: "Spider-Man: Into the Spider-Verse",
         rating: "PG-13",
         currentlyPlaying: true,
-    
+
 
     }
 ]
@@ -217,28 +217,45 @@ var movieString = ""
 var movieContainer = document.querySelector("#movie-schedule");
 for (i = 0; i < movieSchedule.length; i++) {
 
+    //checks to see if the movie is currently playing
     if (movieSchedule[i].currentlyPlaying === true) {
+        
+    //Checks to see what the movie is rated to determine border type
+    var className = "";
+        if (movieSchedule[i].rating === "G") {
+            className = "G"
+
+        } else if (movieSchedule[i].rating === "PG") {
+            className = "PG"
+        } else if (movieSchedule[i].rating === "PG-13") {
+            className = "PG13"
+        } else {
+            className = "R"
+        }
 
         movieString = movieString +
-            `<h3 class ="title">${movieSchedule[i].title}</h3>`
-            if(movieSchedule[i].rating)
-            
-            `<p class = "rating">Rated: ${movieSchedule[i].rating}</p>`
+            `<div class = ${className}> <h3 class ="title">${movieSchedule[i].title}</h3>
+            <p>Rated: ${movieSchedule[i].rating}</p>`
+
         
-            if (!movieSchedule[i].poster) {
-            movieString = movieString + `<img class = "movie-poster" src=https://www.snhrc.com/wp-content/uploads/2018/09/Image-Coming-Soon.png alt = Movie Poster"/>`
+        
+
+        //checks to see if movie schedule poster exists.  If not, assigns an alternate picture
+        if (!movieSchedule[i].poster) {
+            movieString = movieString + `<img class = "movie-poster" src=https://www.snhrc.com/wp-content/uploads/2018/09/Image-Coming-Soon.png alt = Movie Poster"/></div>`
         }
         else {
-            movieString = movieString + `<img class = "movie-poster" src=${movieSchedule[i].poster} alt = Movie Poster"/>`
-        } 
-     {
+            movieString = movieString + `<img class = "movie-poster" src=${movieSchedule[i].poster} alt = Movie Poster"/></div>`
+        }
+        {
             movieString = movieString;
         }
 
     }
 }
 
-    movieContainer.innerHTML = movieString;
+movieContainer.innerHTML = movieString;
+
 
 
 
