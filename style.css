@@ -1,0 +1,25 @@
+.G{
+    border-style: dotted;
+    border-color: green;
+    border-width: 2px;
+
+}
+
+.PG{
+    border-style: dotted;
+    border-color: yellow;
+    border-width: 2px;
+
+}
+
+.PG13{
+    border-style: dotted;
+    border-color: orange;
+    border-width: 2px;
+}
+
+.R{
+    border-style: dotted;
+    border-color: red;
+    border-width: 2px;
+}
